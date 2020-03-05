@@ -1,0 +1,27 @@
+{
+  "name": "wrkt",
+  "version": "1.0.0",
+  "author": "Kristiyan Todorov",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "lerna run test --since --ignore @wrkt/common",
+    "start": "lerna run start --stream --ignore @wrkt/common",
+    "build": "lerna run build  --ignore @wrkt/common",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jest",
+      "**/jest/**",
+      "**/babel-loader",
+      "**/babel-loader/**"
+    ]
+  }
+}
