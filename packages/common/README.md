@@ -1,4 +1,6 @@
-# Full Stack Twitter Clone: common package
+# Common Package
+
+shared reusable code betweet server and browser packages
 
 ## Getting Started
 
