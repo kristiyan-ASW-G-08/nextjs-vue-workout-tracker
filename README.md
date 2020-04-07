@@ -1,80 +1,24 @@
-# Nextjs Vue workout app
+# project
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Packages
-
-- browser (Vue and typescript website)
-- server (Nextjs typescript server)
-- common (Code shared between browser and server)
-
-### Linters And Formatters
-
-- Eslint (Linter)
-- Prettier (Formatter)
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-#### Yarn
-
-##### Installing lerna
-
-globally
-
+## Project setup
 ```
-yarn global add lerna
+yarn install
 ```
 
-or
-
-locally
-
+### Compiles and hot-reloads for development
 ```
-yarn add lerna --dev
+yarn serve
 ```
 
-#### npm
-
-##### Installing lerna
-
-globally
-
+### Compiles and minifies for production
 ```
-npx lerna
+yarn build
 ```
 
-or
-
-locally
-
+### Lints and fixes files
 ```
-npm install lerna --save-dev
+yarn lint
 ```
 
-### Running the app
-
-To start on a localhost server
-
-#### Yarn
-
-```
-yarn start
-```
-
-#### npm
-
-```
-npm run start
-```
-
-## Author
-
-- **Kristiyan Todorov** - [GitHub Profile](https://github.com/krisScript)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
