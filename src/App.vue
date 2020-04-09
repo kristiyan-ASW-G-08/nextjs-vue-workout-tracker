@@ -1,23 +1,19 @@
 <template>
   <div id="app">
-    <ShowsContainer />
+    <router-view />
   </div>
 </template>
 
 <script>
-import ShowsContainer from "./components/ShowsContainer.vue";
 
 export default {
-  name: "App",
-  components: {
-    ShowsContainer
-  }
+  name: "App"
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
