@@ -11,10 +11,8 @@
     <template slot="end">
       <b-navbar-item tag="div">
         <div class="buttons" v-if="!this.isAuth">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">Log in</a>
+          <router-link class="button is-primary" to="/sign-up">Sign Up</router-link>
+          <router-link class="button is-light" to="/login">Log In</router-link>
         </div>
         <div class="buttons" v-if="this.isAuth">
           <a class="button is-light">Log out</a>
