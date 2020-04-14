@@ -5,9 +5,12 @@ import App from "./App";
 import router from "./router";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 
 Vue.use(Buefy);
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
