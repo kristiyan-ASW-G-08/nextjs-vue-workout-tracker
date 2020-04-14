@@ -17,6 +17,10 @@
       <p class="help is-danger" v-if="!$v.password.minLength">
         Password must be atleast 8 characters
       </p>
+
+      <p class="help is-danger" v-if="error">
+        {{ error }}
+      </p>
       <div class="field is-grouped">
         <div class="control">
           <b-button @click="submit">Sign Up</b-button>
@@ -28,12 +32,14 @@
 
 <script>
 import { required, minLength, between, email } from "vuelidate/lib/validators";
-
+import db from "@/firebase/init";
+import firebase from "firebase";
 export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      error: ""
     };
   },
   validations: {
@@ -48,9 +54,16 @@ export default {
   },
   methods: {
     submit() {
-      console.log(this.$v.valid);
       if (!this.$v.$invalid) {
-        console.log("valid");
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(cred => {
+            this.$router.push("/");
+          })
+          .catch(err => {
+            this.error = "Invalid email or password please try again";
+          });
       }
     }
   }

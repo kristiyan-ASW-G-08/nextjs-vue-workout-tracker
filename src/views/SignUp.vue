@@ -28,7 +28,8 @@
 
 <script>
 import { required, minLength, between, email } from "vuelidate/lib/validators";
-
+import db from "@/firebase/init";
+import firebase from "firebase";
 export default {
   data() {
     return {
@@ -50,7 +51,10 @@ export default {
     submit() {
       console.log(this.$v.valid);
       if (!this.$v.$invalid) {
-        console.log("valid");
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(this.email, this.password);
+        this.$router.push("/");
       }
     }
   }

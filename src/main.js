@@ -6,15 +6,19 @@ import router from "./router";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
 import Vuelidate from "vuelidate";
-Vue.use(Vuelidate);
+import firebase from "firebase";
+
 Vue.config.productionTip = false;
+let app = null;
+firebase.auth().onAuthStateChanged(() => {
+  Vue.use(Buefy);
+  Vue.use(Vuelidate);
+  /* eslint-disable no-new */
 
-Vue.use(Buefy);
-
-/* eslint-disable no-new */
-new Vue({
-  el: "#app",
-  router,
-  components: { App },
-  template: "<App/>"
+  app = new Vue({
+    el: "#app",
+    router,
+    components: { App },
+    template: "<App/>"
+  });
 });
