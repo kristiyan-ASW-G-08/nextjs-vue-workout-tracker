@@ -8,12 +8,12 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ this.review.email }}</strong>
+          <strong>{{ this.review.user }}</strong>
 
           <br />
           {{ this.review.content }}
           <br />
-         Rating :{{ this.review.rating }}
+          Rating :{{ this.review.rating }}
         </p>
       </div>
     </div>
