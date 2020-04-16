@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <p class="title" style="text-align:center" v-if="!reviews">No reviews Yet</p>
+  <section cl>
+    <p class="title" style="text-align:center" v-if="reviews.length === 0">No reviews Yet</p>
     <section class="columns section" v-if="reviews">
       <router-link
         :to="`/show/${review.showId}`"
@@ -28,7 +28,6 @@ export default {
       .get()
       .then(snap => {
         this.reviews = snap.docs.map(doc => doc.data());
-        console.log(this.reviews);
       });
   },
   data() {

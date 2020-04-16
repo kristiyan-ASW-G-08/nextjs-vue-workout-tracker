@@ -34,6 +34,21 @@
             </span>
           </template>
         </b-carousel>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left"></div>
+              <div class="media-content"></div>
+            </div>
+
+            <div class="content">
+              <p>Country: {{show.country}}</p>
+              <p>Rating: {{show.rating}}</p>
+              <p>Start Date: {{show.start_date}}</p>
+              <p>Runtime: {{show.runtime}} minutes</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section" style="text-align:center">
@@ -108,7 +123,6 @@ export default {
 
             .then(snap => {
               this.reviews = snap.docs.map(doc => doc.data());
-              console.log(this.reviews);
             });
         })
         .catch(() => (this.error = true));
